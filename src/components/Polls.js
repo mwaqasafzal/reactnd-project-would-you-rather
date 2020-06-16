@@ -8,7 +8,7 @@ class Polls extends Component {
         filter: "unanswered"
     }
     componentDidMount(){
-        console.log(this.props);
+
     }
     handleFilterChange = e => {
         this.setState({ filter: e.target.value })
@@ -39,6 +39,7 @@ class Polls extends Component {
                     {this.props.questions.filter(question=>this.filterCheck(question))
                                         .map(question=>(<PollDescriptor
                                                      key={question.id}
+                                                     id={question.id}
                                                      author={question.author} 
                                                      avatar={question.avatar}
                                                      option={question.optionOne.text} />))}

@@ -31,8 +31,8 @@ class NewPoll extends Component {
     render() {
         const { option1, option2 } = this.state;
         return (
-            <div>
-                <h3 className="center">Create New Poll!</h3>
+            <React.Fragment>
+                <h3 className="center">Create New Question!</h3>
 
                 <form className="new-poll" onSubmit={this.handleSubmit}>
                     <h4>Would you rather!</h4>
@@ -48,9 +48,9 @@ class NewPoll extends Component {
                     />
                     <button
                         disabled={option1.length === 0 || option2.length === 0}>
-                        Add Poll</button>
+                        Add Question</button>
                 </form>
-            </div>
+            </React.Fragment>
         );
     }
 }

@@ -11,44 +11,73 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.dashboard{
+.dashboard {
   display: flex;
-  margin-top:40px;
+  margin-top: 40px;
   align-items: center;
   justify-content: center;
 }
-.center{
+.center {
   text-align: center;
 }
-.polls{
-  width:55%;
+.polls {
+  width: 55%;
 }
 
-.polls-descriptor-list,.user-stats-list{
+.polls-descriptor-list,
+.user-stats-list {
   list-style: none;
   box-sizing: border-box;
 }
-.poll-descriptor{
-  
+.poll-descriptor {
   display: flex;
   align-items: center;
-  
 }
 
-
-
-.author-avatar{
-  height:60px;
-  width:60px;
+.poll-descriptor a{
+  text-decoration: none;
+  display: block;
+  width: 100%;
 }
 
-.author-avatar img{
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+.navbar-x,
+.navbar-y {
+  border: 1px solid black;
+  list-style: none;
+}
+.navbar-y {
+  margin-right: 80px;
+}
+
+.navbar li {
+  display: inline;
+  margin: 5px;
+}
+.navbar-y li {
+  cursor: pointer;
+}
+
+.author-avatar {
+  height: 60px;
+  width: 60px;
+}
+
+.author-avatar img {
   display: block;
   height: 100%;
-  width:100%;
+  width: 100%;
 }
 
-.poll-description{
-  width:80%;
+.poll-description {
+  width: 80%;
   max-width: 576px;
 }

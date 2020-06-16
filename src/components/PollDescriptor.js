@@ -1,5 +1,4 @@
 import React from 'react'
-import { italic } from 'ansi-colors';
 
 const PollDescriptor = props => {
     return (

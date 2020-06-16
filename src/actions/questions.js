@@ -1,16 +1,10 @@
-import { saveQuestion } from '../utils/api'
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS"
-export const ADD_QUESION = "ADD_QUESTION"
+export const ADD_QUESTION = "ADD_QUESTION"
+export const UPDATE_QUESTION_ANSWERS = "UPDATE_QUESTION_ANSWERS"
 
 
-export const handleNewQuestion = question => {
-    return dispatch => {
-        saveQuestion(question)
-            .then(question => dispatch(addQuestion(question)));
-    }
-}
-const addQuestion = question => ({
-    type: ADD_QUESION,
+export const addQuestion = question => ({
+    type: ADD_QUESTION,
     question
 });
 export const receiveQuestions = questions => ({
@@ -18,3 +12,8 @@ export const receiveQuestions = questions => ({
     questions
 })
 
+//numbers of answers or votes for particular answer
+export const updateQuestionAnswers = info => ({
+    type: UPDATE_QUESTION_ANSWERS,
+    info
+});

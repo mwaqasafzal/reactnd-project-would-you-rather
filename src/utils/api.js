@@ -1,6 +1,4 @@
 
-import { formatQuestion } from './helper'
-import { questions, users } from './_DATA'
 import {
   _getUsers,
   _getQuestions,

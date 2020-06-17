@@ -106,7 +106,8 @@ p {
 }
 
 .author-avatar img,
-.avatar img {
+.avatar img,
+.questioner-profile img {
   display: block;
   height: 100%;
   width: 100%;
@@ -154,7 +155,7 @@ p {
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   margin: auto;
-  width: 50%;
+  width: 55%;
 }
 
 .leadersboard-rating {
@@ -168,6 +169,7 @@ p {
 
 .option-stats {
   display: inline-flex;
+  font-size: 0.8rem;
 }
 
 .profile {
@@ -193,4 +195,33 @@ p {
   font-size: 0.8rem;
   color: white;
   font-family: "Montserrat", sans-serif;
+}
+
+.questioner-question {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #3282b8;
+  border-radius: 20px;
+  color: white;
+}
+
+.questioner-profile {
+  display: flex;
+  flex-flow: column;
+}
+
+.questioner-profile .avatar {
+  height: 80px;
+  width: 80px;
+  border: 3px solid #0f4c75;
+  overflow: hidden;
+}
+
+.vote {
+  font-size: 0.8rem;
+}
+
+.option {
+  border-bottom: 1px solid white;
 }

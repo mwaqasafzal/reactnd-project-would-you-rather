@@ -25,37 +25,44 @@ const Question = props => {
 
     return (
         <div className="question">
-            <h4 className="title">Would Your Rather?</h4>
-           
-            <FormControl component="fieldset">
-                <RadioGroup aria-label="option" name="option" onChange={handleChange}>
-                    <div>
-                        <FormControlLabel
-                            value="optionOne"
-                            control={<Radio />}
-                            disabled={props.voted}
-                            checked={optionSelected === "optionOne"}
-                            label={optionOne.text} />
-                        {props.voted && (
-                            <span className="option-stats">
-                                {optionOnePercent}%
-                            </span>)}
+            <h4 className="title center">Would Your Rather?</h4>
+            <div className="questioner-question">
+                <div className="questioner-profile">
+                    <div className="avatar">
+                        <img src={props.questionerAvatar} />
                     </div>
-                    <div>
-                        <FormControlLabel
-                            value="optionTwo"
-                            control={<Radio />}
-                            checked={optionSelected === "optionTwo"}
-                            disabled={props.voted}
-                            label={optionTwo.text} />
-                        {props.voted && (
-                            <span className="option-stats">
-                                {optionTwoPercent}%
+                </div>
+                <FormControl component="fieldset">
+                    <RadioGroup aria-label="option" name="option" onChange={handleChange}>
+                        <div className="option">
+                            <FormControlLabel
+                                value="optionOne"
+                                control={<Radio />}
+                                disabled={props.voted}
+                                checked={optionSelected === "optionOne"}
+                                label={optionOne.text} />
+                            {props.voted && (
+                                <span className="option-stats">
+                                    {optionOnePercent}%({optionOneVotes} Vote(s))
                             </span>)}
-                    </div>
+                        </div>
+                        <div className="option">
+                            <FormControlLabel
+                                value="optionTwo"
+                                control={<Radio />}
+                                checked={optionSelected === "optionTwo"}
+                                disabled={props.voted}
+                                label={optionTwo.text} />
+                            {props.voted && (
+                                <span className="option-stats">
+                                    {optionTwoPercent}% ({optionTwoVotes} Vote(s))
+                            </span>)}
+                        </div>
 
-                </RadioGroup>
-            </FormControl>
+                    </RadioGroup>
+                </FormControl>
+            </div>
+
         </div>
 
     );
@@ -65,9 +72,11 @@ const mapStateToProps = ({ users, authedUser, questions }, { match }) => {
     const { qid } = match.params;
     const answers = Object.keys(users[authedUser].answers);
     const voted = answers.includes(qid);
-
+    const question = questions[qid];
+    const user = users[question.author];
     return {
-        question: questions[qid],
+        question,
+        questionerAvatar: user.avatarURL,
         authedUser,
         voted,
         optionSelected: voted && users[authedUser].answers[qid],

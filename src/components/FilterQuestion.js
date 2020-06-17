@@ -1,9 +1,9 @@
 import React from 'react';
 
-const FilterPoll = props => {
+const FilterQuestion = props => {
     return (
-        <form className="filter-Poll">
-            <select value={props.value} onChange={props.handleFilterChange}>
+        <form className="filter">
+           <span style={{fontWeight:"bold"}}>Filter:</span> <select value={props.value} onChange={props.handleFilterChange}>
                 <option value="unanswered">Unanswered</option>
                 <option value="answered">Answered</option>
                 <option value="both">Both</option>
@@ -11,4 +11,4 @@ const FilterPoll = props => {
         </form>
     );
 }
-export default FilterPoll
+export default FilterQuestion

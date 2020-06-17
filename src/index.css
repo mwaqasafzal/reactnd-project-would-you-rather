@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+html {
+  /* for height management i.e controlling height of each element  */
+  height: 100%;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,54 +14,48 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.dashboard {
-  display: flex;
-  margin-top: 40px;
-  align-items: center;
-  justify-content: center;
-}
-.center {
-  text-align: center;
-}
-.polls {
-  width: 55%;
-}
 
-.polls-descriptor-list,
-.user-stats-list {
-  list-style: none;
-  box-sizing: border-box;
-}
-.poll-descriptor {
-  display: flex;
-  align-items: center;
-}
-
-.poll-descriptor a{
-  text-decoration: none;
-  display: block;
-  width: 100%;
+header {
+  height: 120px;
+  background-color: #1b262c;
+  color: white;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
+  height: 100%;
 }
 
-.navbar a {
+a {
   text-decoration: none;
+  color: white;
 }
+p {
+  font-family: "Montserrat", sans-serif;
+}
+.navbar a:hover {
+  color: rgba(235, 223, 223, 0.808);
+}
+.active,
+.navbar a:active {
+  text-decoration: underline;
+}
+
 .navbar-x,
 .navbar-y {
-  border: 1px solid black;
+  display: flex;
   list-style: none;
+  justify-content: center;
+  align-items: center;
 }
 .navbar-y {
   margin-right: 80px;
@@ -66,18 +69,105 @@ code {
   cursor: pointer;
 }
 
-.author-avatar {
-  height: 60px;
-  width: 60px;
+.questions-list,
+.new-question {
+  margin: auto;
+  width: 50%;
+  max-width: 410px;
+  min-width: 300px;
 }
 
-.author-avatar img {
+.center {
+  text-align: center;
+}
+
+.title {
+  color: #0f4c75;
+}
+
+.filter {
+  text-align: right;
+  font-family: "Times New Roman", Times, serif;
+}
+.filter select {
+  border: 2px solid #364f6b;
+  outline: none;
+  background-color: transparent;
+  padding: 8px;
+}
+
+.author-avatar,
+.avatar {
+  height: 60px;
+  width: 60px;
+  border: 2px solid #364f6b;
+  border-radius: 35px;
+  overflow: hidden;
+}
+
+.author-avatar img,
+.avatar img {
   display: block;
   height: 100%;
   width: 100%;
 }
 
-.poll-description {
-  width: 80%;
-  max-width: 576px;
+.questions {
+  border: 3px solid #364f6b;
+  width: 100%;
+  height: 500px;
+  overflow: auto;
+}
+
+.questions table tr {
+  cursor: pointer;
+}
+
+.new-question .option {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #0f4c75;
+  margin-bottom: 0.5rem;
+  outline: none;
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  color: #1b262c;
+}
+
+.btn {
+  width: 100%;
+  background-color: #0f4c75;
+  color: white;
+  font-size: 1.1rem;
+  padding: 6px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  background-color: #33688bea;
+  cursor: not-allowed;
+}
+.leadersboard,
+.question {
+  font-family: "Montserrat", sans-serif;
+  margin: auto;
+  width: 50%;
+}
+.question {
+  padding: 0.5rem;
+  border: 3px solid #1b262c;
+}
+
+.leadersboard-rating {
+  width: 100%;
+  border: 3px solid #1b262c;
+}
+.leadersboard table td {
+  padding: 10px;
+}
+
+.question input {
+  border: 2px solid red;
 }

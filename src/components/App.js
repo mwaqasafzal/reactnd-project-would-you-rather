@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import Dashboard from './Dashboard'
-import NewPoll from './NewPoll'
-import Poll from './Poll'
-import Leaderboard from './Leaderboard'
+import NewQuestion from './NewQuestion'
+import Question from './Question'
+import Leaderboard from './Leadersboard'
 import Navbar from './Navbar'
 import { loadData } from '../actions/shared'
 import { connect } from 'react-redux'
@@ -18,9 +18,9 @@ function App(props) {
         </header>
         <main>
             <Route path="/" exact  component={Dashboard}/>
-            <Route path="/questions/:qid" component={Poll}/>
-            <Route path="/add" component={NewPoll}/>
-            <Route path="/leaderboard" component={Leaderboard}/>
+            <Route path="/questions/:qid" component={Question}/>
+            <Route path="/add" component={NewQuestion}/>
+            <Route path="/leadersboard" component={Leaderboard}/>
         </main>
       </React.Fragment>
     ) : <h3 className="center">Loading</h3>

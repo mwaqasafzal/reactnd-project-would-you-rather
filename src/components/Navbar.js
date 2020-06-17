@@ -1,12 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 const Navbar = props => {
     return (
         <div className="navbar">
             <ul className="navbar-x">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/add">Create Poll</Link></li>
-                <li><Link to="/leaderboard">Leaderboard</Link></li>
+                <li><NavLink activeClassName="active" to="/" exact>Home</NavLink></li>
+                <li><NavLink activeClassName="active" to="/add">Create Poll</NavLink></li>
+                <li><NavLink activeClassName="active" to="/leadersboard">Leadersboard</NavLink></li>
             </ul>
             <ul className="navbar-y">
                 <li>Profile</li>

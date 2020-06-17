@@ -2,24 +2,32 @@ import React from 'react';
 
 const UserStats = props => {
     return (
-        <li className="user-stats">
-            <div className="avatar">
-                <img src={props.avatar} />
-            </div>
-            <div className="stats">
-                <div className="stats-all">
-                    <p>Name {props.name}</p>
-                    <p>Answered: {props.answered}</p>
-                    <p>Asked:{props.asked}</p>
+        <tr>
+            <td>
+                <div className="avatar">
+                    <img src={props.avatar} />
                 </div>
-
-                <div className="stats-totals">
-                    Total:{props.total}
-                </div>
-            </div>
-
-
-        </li>
+                <p>{props.name}</p>
+            </td>
+            <td>
+                {/* for better formatting */}
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Answered </td>
+                            <td>{props.answered}</td>
+                        </tr>
+                        <tr>
+                            <td>Asked</td>
+                            <td>{props.asked}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td>
+                Total:{props.total}
+            </td>
+        </tr>
     );
 }
 

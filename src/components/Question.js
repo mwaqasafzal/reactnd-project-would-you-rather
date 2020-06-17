@@ -2,7 +2,7 @@ import React from 'react'
 import { handleSaveQuestionAnswer } from '../actions/shared'
 import { connect } from 'react-redux'
 
-const Poll = props => {
+const Question = props => {
 
     const handleChange = (e, option) => {
         e.preventDefault();
@@ -21,19 +21,23 @@ const Poll = props => {
     const optionTwoPercent = (optionTwoVotes / (optionOneVotes + optionTwoVotes) * 100).toFixed(2);
 
     return (
-        <form>
-            <input
-                type="radio"
-                onChange={e => handleChange(e, 'optionOne')}
-                disabled={props.voted} />{optionOne.text}&nbsp;
+        <div className="question">
+            <h3 className="title">Would you rather?</h3>
+            <form>
+                <input
+                    type="radio"
+                    onChange={e => handleChange(e, 'optionOne')}
+                    disabled={props.voted} />{optionOne.text}&nbsp;
                 {props.voted && <span>{optionOnePercent}%</span>}
-            <br />
-            <input
-                type="radio"
-                onChange={e => handleChange(e, 'optionTwo')}
-                disabled={props.voted} />{optionTwo.text}&nbsp;
+                <br />
+                <input
+                    type="radio"
+                    onChange={e => handleChange(e, 'optionTwo')}
+                    disabled={props.voted} />{optionTwo.text}&nbsp;
                     {props.voted && <span>{optionTwoPercent}%</span>}
-        </form>
+            </form>
+        </div>
+
 
     );
 }
@@ -45,4 +49,4 @@ const mapStateToProps = ({ users, authedUser, questions }, { match }) => ({
     optionOneVotes: questions[match.params.qid].optionOne.votes.length,
     optionTwoVotes: questions[match.params.qid].optionTwo.votes.length
 });
-export default connect(mapStateToProps)(Poll);
+export default connect(mapStateToProps)(Question);

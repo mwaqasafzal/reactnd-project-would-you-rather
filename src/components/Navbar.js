@@ -5,7 +5,7 @@ const Navbar = props => {
         <div className="navbar">
             <ul className="navbar-x">
                 <li><NavLink activeClassName="active" to="/" exact>Home</NavLink></li>
-                <li><NavLink activeClassName="active" to="/add">Create Poll</NavLink></li>
+                <li><NavLink activeClassName="active" to="/add">Create-Question</NavLink></li>
                 <li><NavLink activeClassName="active" to="/leadersboard">Leadersboard</NavLink></li>
             </ul>
             <ul className="navbar-y">

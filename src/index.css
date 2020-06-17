@@ -152,13 +152,11 @@ p {
 .leadersboard,
 .question {
   font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
   margin: auto;
   width: 50%;
 }
-.question {
-  padding: 0.5rem;
-  border: 3px solid #1b262c;
-}
+
 
 .leadersboard-rating {
   width: 100%;
@@ -168,6 +166,6 @@ p {
   padding: 10px;
 }
 
-.question input {
-  border: 2px solid red;
+.option-stats{
+  display:inline-flex
 }

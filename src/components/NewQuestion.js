@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import { handleNewQuestion } from '../actions/shared'
 import { connect } from 'react-redux'
 
-class NewPoll extends Component {
+class NewQuestion extends Component {
     state = {
         option1: "",
         option2: ""
     }
     handleChange = (e, option) => {
         e.preventDefault();
-        this.setState({ [option]: e.target.value.trim() })
+        this.setState({ [option]: e.target.value })
     }
     handleSubmit = e => {
         e.preventDefault();
@@ -31,24 +31,30 @@ class NewPoll extends Component {
     render() {
         const { option1, option2 } = this.state;
         return (
-            <div>
-                <h3 className="center">Create New Poll!</h3>
+            <div className="new-question">
+                <h2 className="center title" >Create New Question!</h2>
 
-                <form className="new-poll" onSubmit={this.handleSubmit}>
-                    <h4>Would you rather!</h4>
+                <form onSubmit={this.handleSubmit}>
+                    <h3 style={{ color: "#3282b8" }}>Would you rather!</h3>
                     <input
                         placeholder="Option 1"
                         value={option1}
                         onChange={e => this.handleChange(e, 'option1')}
+                        className="option"
                     />
+                    <br />
                     <input
                         placeholder="Option 2"
                         value={option2}
                         onChange={e => this.handleChange(e, 'option2')}
+                        className="option"
                     />
+                    <br />
                     <button
-                        disabled={option1.length === 0 || option2.length === 0}>
-                        Add Poll</button>
+                        disabled={option1.length === 0 || option2.length === 0}
+                        className="btn"
+                        >
+                        Add Question</button>
                 </form>
             </div>
         );
@@ -58,4 +64,4 @@ class NewPoll extends Component {
 const mapStateToProps = ({ authedUser }) => ({
     authedUser
 });
-export default connect(mapStateToProps)(NewPoll)
+export default connect(mapStateToProps)(NewQuestion)

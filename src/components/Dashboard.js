@@ -1,12 +1,8 @@
 import React from 'react'
-import Polls from './Polls'
+import Questions from './Questions'
 
 const Dashboard = props => {
-    return (
-        <div className="dashboard">
-            <Polls />
-        </div>
-    );
+    return <Questions />
 }
 
 export default Dashboard

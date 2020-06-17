@@ -10,6 +10,7 @@ class NewQuestion extends Component {
     handleChange = (e, option) => {
         e.preventDefault();
         this.setState({ [option]: e.target.value })
+
     }
     handleSubmit = e => {
         e.preventDefault();
@@ -26,6 +27,7 @@ class NewQuestion extends Component {
         //right now we are doing this but for later...
         this.setState({ option1: "", option2: "" })
         //we will redirect to dashboard
+        this.props.history.replace("/");
     }
 
     render() {
@@ -53,7 +55,7 @@ class NewQuestion extends Component {
                     <button
                         disabled={option1.length === 0 || option2.length === 0}
                         className="btn"
-                        >
+                    >
                         Add Question</button>
                 </form>
             </div>

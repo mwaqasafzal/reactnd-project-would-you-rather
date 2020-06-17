@@ -6,8 +6,8 @@ const Leaderboard = props => {
 
     return (
         <div className="leadersboard">
-            <h2 className="center title">Leadersboard</h2>
-            <table class="leadersboard-rating">
+            <h3 className="center title">Leadersboard</h3>
+            <table className="leadersboard-rating">
                 <tbody>
                     {props.users.map(user => (
                         <UserStats

@@ -2,6 +2,7 @@ import React from 'react'
 import { handleSaveQuestionAnswer } from '../actions/shared'
 import { connect } from 'react-redux'
 import { FormControl, Radio, RadioGroup, FormControlLabel } from '@material-ui/core'
+import {Redirect} from 'react-router-dom'
 
 const Question = props => {
 
@@ -17,8 +18,10 @@ const Question = props => {
         }
         props.dispatch(handleSaveQuestionAnswer(info));
     }
+    if(props.notFound)
+        return <Redirect to="/not-found"/>
 
-    const { question, optionOneVotes, optionTwoVotes, optionSelected } = props;
+    const { question, optionOneVotes, optionTwoVotes, optionSelected} = props;
     const { optionOne, optionTwo } = question;
     const optionOnePercent = (optionOneVotes / (optionOneVotes + optionTwoVotes) * 100).toFixed(2);
     const optionTwoPercent = (optionTwoVotes / (optionOneVotes + optionTwoVotes) * 100).toFixed(2);
@@ -70,6 +73,10 @@ const Question = props => {
 
 const mapStateToProps = ({ users, authedUser, questions }, { match }) => {
     const { qid } = match.params;
+    if(!questions[qid])
+        return{
+            notFound:true
+        }
     const answers = Object.keys(users[authedUser].answers);
     const voted = answers.includes(qid);
     const question = questions[qid];

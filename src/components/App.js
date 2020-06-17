@@ -4,28 +4,36 @@ import NewQuestion from './NewQuestion'
 import Question from './Question'
 import Leaderboard from './Leadersboard'
 import Navbar from './Navbar'
+import Login from './Login';
+import Notfound from './Notfound'
 import { loadData } from '../actions/shared'
 import { connect } from 'react-redux'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
+import { authenticateUser } from '../actions/authedUser';
 
 
 function App(props) {
   useEffect(() => props.dispatch(loadData()), []);
+
   return (
 
     props.authedUser ? (
       <React.Fragment>
         <header>
-          <Navbar logout={() => alert('logging out')} />
+          <Navbar logout={() => props.dispatch(authenticateUser(null))} />
         </header>
         <main>
-          <Route path="/" exact component={Dashboard} />
-          <Route path="/questions/:qid" component={Question} />
-          <Route path="/add" component={NewQuestion} />
-          <Route path="/leadersboard" component={Leaderboard} />
+          <Switch>
+            <Route path="/" exact component={Dashboard} />
+            <Route path="/questions/:qid" component={Question} />
+            <Route path="/add" component={NewQuestion} />
+            <Route path="/leadersboard" component={Leaderboard} />
+            <Route path="*" component={Notfound} />
+          </Switch>
+
         </main>
       </React.Fragment>
-    ) : <h3 className="center">Loading</h3>
+    ) : <Login />
 
   );
 }

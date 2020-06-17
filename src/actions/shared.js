@@ -1,9 +1,6 @@
 import { getData, saveQuestion, saveQuestionAnswer } from '../utils/api'
 import { receiveUsers, saveAnswer, newQuestion } from './users';
 import { receiveQuestions, updateQuestionAnswers, addQuestion } from './questions'
-import { authenticateUser } from './authedUser'
-
-const user = "tylermcginnis";
 
 export const loadData = () => {
     return dispatch => {
@@ -11,7 +8,6 @@ export const loadData = () => {
             .then(({ questions, users }) => {
                 dispatch(receiveUsers(users));
                 dispatch(receiveQuestions(questions));
-                dispatch(authenticateUser(user))
             })
     }
 

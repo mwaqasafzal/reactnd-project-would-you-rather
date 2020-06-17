@@ -1,3 +1,17 @@
+# Would you rather Project
+
+This is Second Project of Udacity's React Nano Degree.
+Basically its a game for creating and voting to number of polls,which has proper defined rules as well for example after giving vote,it can't be undo.
+
+Simply clone this repository
+i.e https://github.com/mwaqasafzal/reactnd-project-would-you-rather.git
+
+open it in your favourite ide
+run `npm install` (i assume you have node.js and npm installed on your system)
+run `npm start`
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

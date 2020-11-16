@@ -26,6 +26,14 @@ header {
   min-height: 80px;
   background-color: #1b262c;
   color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+main {
+  padding-top: 100px;
+  min-height: 100vh;
 }
 .logo {
   margin: 0;
@@ -47,8 +55,8 @@ header {
 .mob-navbar > div:first-of-type {
   display: flex;
   justify-content: space-between;
-  position: relative;
-  top: 10px;
+  align-items: center;
+  height: 80px;
 }
 .toggleBtn {
   height: 30px;
@@ -79,6 +87,15 @@ a {
 p {
   font-family: "Montserrat", sans-serif;
 }
+.navbar {
+  display: flex;
+  align-items: center;
+}
+.navbar > div:first-of-type {
+  width: 78%;
+  display: flex;
+  justify-content: space-between;
+}
 .navbar a:hover {
   color: rgba(235, 223, 223, 0.808);
 }
@@ -95,9 +112,8 @@ p {
   align-items: center;
 }
 .navbar-y {
-  margin-right: 80px;
+  margin-right: 10px;
 }
-
 .navbar li {
   display: inline;
   margin: 5px;

@@ -7,7 +7,11 @@ class MobNavbar extends Component {
   state = {
     toggle: false,
   };
-
+  toggleDD = () => {
+    this.setState((prevState) => {
+      return { toggle: !prevState.toggle };
+    });
+  };
   render() {
     const { toggle } = this.state;
     let className = toggle ? "show" : "hide";
@@ -16,15 +20,9 @@ class MobNavbar extends Component {
       <div className="mob-navbar">
         <div>
           <Logo />
-          <ToggleButton
-            toggle={() =>
-              this.setState((prevState) => {
-                return { toggle: !prevState.toggle };
-              })
-            }
-          />
+          <ToggleButton toggle={this.toggleDD} />
         </div>
-        <ul className={className}>
+        <ul className={className} onClick={this.toggleDD}>
           <li>
             <NavLink activeClassName="active" to="/" exact>
               Home

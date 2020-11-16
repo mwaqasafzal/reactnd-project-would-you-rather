@@ -132,6 +132,11 @@ p {
   justify-content: center;
   align-items: center;
 }
+.questions-list > div:first-of-type {
+  width: 60%;
+  max-width: 420px;
+  min-width: 340px;
+}
 
 .center {
   text-align: center;
@@ -171,8 +176,6 @@ p {
 
 .questions {
   border: 3px solid #364f6b;
-  max-width: 410px;
-  min-width: 300px;
   width: 100%;
   height: 475px;
   overflow: auto;

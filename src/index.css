@@ -312,6 +312,7 @@ p {
   width: 40%;
   height: 280px;
   max-width: 380px;
+  min-width: 252px;
 }
 
 .login-form form {
@@ -332,6 +333,12 @@ p {
   font-size: 1rem;
 }
 
+.loginNote {
+  color: red;
+  width: 70%;
+  margin-top: 14px;
+  text-align: center;
+}
 @media (max-width: 790px) {
   .mob-navbar {
     display: block;

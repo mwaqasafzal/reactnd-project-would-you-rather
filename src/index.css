@@ -23,18 +23,55 @@ code {
 }
 
 header {
-  min-height: 100px;
+  min-height: 80px;
   background-color: #1b262c;
   color: white;
 }
-
+.logo {
+  margin: 0;
+  margin-left: 5px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-family: inherit;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
   height: 100%;
 }
+.mob-navbar {
+  display: none;
+}
+.mob-navbar > div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 10px;
+}
+.toggleBtn {
+  height: 30px;
+  width: 32px;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 4px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px black;
+  margin-right: 10px;
+}
 
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.toggleBtn div {
+  height: 3px;
+  margin: 3px 0;
+  background-color: white;
+}
 a {
   text-decoration: none;
   color: white;
@@ -264,9 +301,7 @@ p {
 
   font-size: 1rem;
 }
-.mob-navbar {
-  display: none;
-}
+
 @media (max-width: 760px) {
   .mob-navbar {
     display: block;

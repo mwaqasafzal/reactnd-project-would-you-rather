@@ -36,7 +36,7 @@ main {
   min-height: 100vh;
 }
 .logo {
-  width: 162px;
+  min-width: 162px;
   margin: 0;
   margin-left: 5px;
   font-weight: bold;
@@ -93,7 +93,7 @@ p {
   align-items: center;
 }
 .navbar > div:first-of-type {
-  width: calc(100vw - 162px);
+  width: calc(100vw - 171px);
   display: flex;
   justify-content: space-between;
 }
@@ -226,10 +226,10 @@ p {
   width: 100%;
   border: 3px solid #364f6b;
   max-height: 475px;
-  max-width: 414px;
+  max-width: 420px;
   min-width: 300px;
 
-  overflow: scroll;
+  overflow: auto;
 }
 .leadersboard table td {
   padding: 10px;

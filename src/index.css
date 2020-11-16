@@ -23,7 +23,7 @@ code {
 }
 
 header {
-  height: 120px;
+  min-height: 100px;
   background-color: #1b262c;
   color: white;
 }
@@ -155,7 +155,7 @@ p {
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   display: flex;
-  flex-flow:column;
+  flex-flow: column;
   align-items: center;
   justify-content: center;
   margin: auto;
@@ -262,5 +262,27 @@ p {
   margin-bottom: 1rem;
   outline: none;
 
-  font-size:1rem;
+  font-size: 1rem;
+}
+.mob-navbar {
+  display: none;
+}
+@media (max-width: 760px) {
+  .mob-navbar {
+    display: block;
+  }
+  .navbar {
+    display: none;
+  }
+
+  header ul {
+    margin: 0;
+    list-style: none;
+  }
+  header li {
+    padding: 5px;
+  }
+  ul ul {
+    background-color: #202e357a;
+  }
 }
